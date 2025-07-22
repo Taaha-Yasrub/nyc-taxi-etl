@@ -1,0 +1,12 @@
+# Ignore large or generated files
+*.csv
+*.parquet
+*.pyc
+*.log
+*.db
+__pycache__/
+data/
+scripts/data/
+logs/
+taxi_dbt/data/
+taxi_dbt/seeds/

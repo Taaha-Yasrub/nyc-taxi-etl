@@ -1,37 +1,22 @@
-# Welcome to your prefect.yaml file! You can use this file for storing and managing
-# configuration for deploying your flows. We recommend committing this file to source
-# control along with your flow code.
-
-# Generic metadata about this project
-name: etl_project
+name: daily-etl
 prefect-version: 3.4.9
+entrypoint: etl_flow.py:taxi_pipeline
 
-# build section allows you to manage and build docker images
-build: null
-
-# push section allows you to manage if and how this project is uploaded to remote locations
-push: null
-
-# pull section allows you to provide instructions for cloning this project in remote locations
 pull:
-- prefect.deployments.steps.set_working_directory:
-    directory: C:\Users\taaha\etl_project
+- prefect.deployments.steps.git_clone:
+    repository: https://github.com/Taaha-Yasrub/nyc-taxi-etl.git
+    branch: main
 
-# the deployments section allows you to provide configuration for deploying flows
+work_pool:
+  name: cloud-pool
+  job_variables: {}
+
 deployments:
 - name: daily-etl
-  version: null
-  tags: []
-  concurrency_limit: null
-  description: null
   entrypoint: etl_flow.py:taxi_pipeline
-  parameters: {}
   work_pool:
     name: cloud-pool
-    work_queue_name: default
     job_variables: {}
-  schedules:
-  - cron: 0 8 * * *
-    timezone: America/New_York
-    day_or: true
-    active: true
+  schedule:
+    cron: "0 8 * * *"
+    timezone: "America/New_York"

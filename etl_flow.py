@@ -20,12 +20,12 @@ def export_results_task():
 
 @flow(name="NYC Taxi Full ETL Pipeline")
 def taxi_pipeline():
-    print("🚀 Starting full pipeline...")
+    print("Starting full pipeline...")
     ingest_data_task()
     clean_data_task()
     run_dbt_models()
     export_results_task()
-    print("✅ All steps completed!")
+    print("All steps completed!")
 
 if __name__ == "__main__":
     taxi_pipeline()

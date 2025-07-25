@@ -123,5 +123,5 @@ This pipeline illustrates critical professional skills and processes:
 
 **Taaha Yasrub**
 
-* [LinkedIn](https://www.linkedin.com/in/your-link)
+* [LinkedIn](https://www.linkedin.com/in/taaha-yasrub-ba9b04241/)
 * [GitHub](https://github.com/Taaha-Yasrub)

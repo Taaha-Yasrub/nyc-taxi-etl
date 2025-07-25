@@ -18,7 +18,7 @@ def main():
     for filename in os.listdir(data_dir):
         if filename.endswith("-cleaned.csv"):
             path = os.path.join(data_dir, filename)
-            print(f"📥 Loading {filename} into DuckDB...")
+            print(f"Loading {filename} into DuckDB...")
             try:
                 con.execute(f"""
                     CREATE OR REPLACE TABLE yellow_tripdata_cleaned AS
@@ -40,7 +40,7 @@ def main():
             TO '{output}'
             WITH (HEADER, DELIMITER ',')
         """)
-        print(f"✅ Exported {table} to {output}")
+        print(f"Exported {table} to {output}")
 
 if __name__ == "__main__":
     main()

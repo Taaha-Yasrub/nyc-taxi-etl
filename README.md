@@ -61,8 +61,6 @@ Visualizations and insights generated from the processed datasets include:
 * **Hourly Demand Patterns**
 * **Fare Range Distribution Analysis**
 
-*(Power BI dashboard screenshots or file link can be included here.)*
-
 ---
 
 ## Technical Specifications
@@ -102,9 +100,6 @@ pip install -r requirements.txt
 ```bash
 python etl_flow.py
 ```
-
-*(Note: Ensure dbt and DuckDB are properly configured on your system.)*
-
 ---
 
 ## Project Relevance
